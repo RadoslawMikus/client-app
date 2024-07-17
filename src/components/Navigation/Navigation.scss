@@ -1,0 +1,62 @@
+$icon-active-bg: #76adff;
+$title-active: #76adff;
+$navigation-bg: #3149e8;
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  position: fixed;
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12%;
+  max-height: 100px;
+  background-color: $navigation-bg;
+  z-index: 5;
+  @include flex;
+  line-height: 16px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  font: {
+    weight: 500;
+    size: 12px;
+  }
+}
+
+.element {
+  height: 80px;
+  width: 80px;
+  @include flex;
+  flex-direction: column;
+  gap: 10%;
+
+  .icon {
+    @include flex;
+    width: 80%;
+    height: 30px;
+  }
+}
+
+.icon_active {
+  background: $icon-active-bg;
+  border-radius: 15px;
+  padding: 2px 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.active {
+  color: $title-active;
+}
+
+.hidden {
+  display: none !important;
+}

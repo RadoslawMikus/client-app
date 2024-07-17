@@ -1,0 +1,138 @@
+$desc-color: #5f5e62;
+$header-color: #47464a;
+$header2-color: #5f5e62;
+$inactive-dots: #d9d9d9;
+$active-dot: #3149e8;
+$button-bg: #3149e8;
+$wannatalk-color: #5f5e62;
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description {
+  font: {
+    weight: 400;
+    size: 14px;
+  }
+  line-height: 20px;
+  color: $desc-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font: {
+      weight: 400;
+      size: 32px;
+    }
+    line-height: 40px;
+    color: $header-color;
+    width: 70%;
+  }
+
+  p {
+    width: 75%;
+    margin-top: 2%;
+  }
+}
+
+h2 {
+  line-height: 36px;
+  color: $header2-color;
+  width: 75%;
+  margin: 2% auto;
+  font: {
+    weight: 400;
+    size: 28px;
+  }
+}
+
+h3 {
+  margin: 5px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  font: {
+    weight: 500;
+    size: 14px;
+  }
+}
+
+.mockup_contact {
+  margin: 2% 5%;
+  width: 90%;
+}
+
+.points {
+  display: flex;
+  flex-direction: column;
+  width: 82%;
+  text-align: left;
+  margin: 5% auto 10%;
+
+  .carousel_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10%;
+    margin: 2% 0;
+    font-size: 14px;
+  }
+}
+
+.rectangle {
+  width: 80px;
+}
+
+.if {
+  line-height: 20px;
+  color: $wannatalk-color;
+  margin: 8% auto 5%;
+  width: 75%;
+  font: {
+    weight: 400;
+    size: 14px;
+  }
+}
+
+.contactUs {
+  background-color: $button-bg;
+  color: #fff;
+  width: 210px;
+  height: 40px;
+  line-height: 20px;
+  margin: 2% 0 15%;
+  font-weight: 500;
+  font-size: 14px;
+  border: 0;
+  border-radius: 100px;
+}
+
+.w-90 {
+  display: block;
+  width: 94%;
+  margin: 0 auto;
+}
+
+.carousel-caption {
+  position: relative;
+  left: 0;
+  right: 0;
+  color: #000;
+  margin: 12% auto 4%;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  padding: 0;
+  font: {
+    weight: 500;
+    size: 14px;
+  }
+}
+
+.carousel {
+  width: 90% !important;
+}
