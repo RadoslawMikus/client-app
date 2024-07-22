@@ -14,6 +14,52 @@
   //   font-family: "Roboto";
   //   font-style: normal;
   overflow: auto;
+
+  h1 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: #3149e8;
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  input {
+    border: 0;
+    color: rgba(0, 0, 0, 0.6);
+    width: 90%;
+    //   font-family: "Roboto";
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    padding: 20px 0 19;
+    background-color: transparent;
+    outline: none;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 8% 15% 5%;
+  }
+
+  p {
+    width: 55%;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 
 .login-btn {
@@ -53,52 +99,6 @@
     width: 10%;
     padding: 15px 15px 15px 15px;
   }
-}
-
-input {
-  border: 0;
-  color: rgba(0, 0, 0, 0.6);
-  width: 90%;
-  //   font-family: "Roboto";
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  padding: 20px 0 19;
-  background-color: transparent;
-  outline: none;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding: 8% 15% 5%;
-}
-
-h1 {
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 40px;
-  text-align: center;
-}
-
-h2 {
-  text-align: center;
-}
-
-h3 {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.1px;
-  color: #3149e8;
-  text-transform: uppercase;
-  text-align: right;
-}
-
-p {
-  width: 55%;
-  margin: 0 auto;
-  text-align: center;
 }
 
 .mockup {
@@ -152,6 +152,16 @@ p {
     color: #1b1b1f;
     text-align: left;
     margin: 0 0 5%;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: #3149e8;
+    text-transform: uppercase;
+    text-align: right;
   }
 
   p {

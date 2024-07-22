@@ -7,6 +7,7 @@ import account from "./img/account_box.svg";
 import { useState } from "react";
 
 export default function Login() {
+  const [loggedIn, setLoggedIn] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
@@ -30,7 +31,7 @@ export default function Login() {
     <>
       <Logo />
 
-      <div className="login">
+      <section className="login">
         <h1>Cześć!</h1>
         <p className="about_section">
           W tym miejscu przetestujesz reklamy z Twoich kampanii
@@ -81,7 +82,7 @@ export default function Login() {
         <p className="no_password" onClick={handleModal}>
           Nie masz loginu lub nie pamiętasz hasła?
         </p>
-      </div>
+      </section>
       {modalOpen && (
         <>
           <div id="overlay"></div>

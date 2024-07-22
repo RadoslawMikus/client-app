@@ -1,0 +1,125 @@
+{
+  "banner": {
+    "title": "Banner Ads",
+    "description_1": "Klasyczne formaty reklamowe w mobile.",
+    "description_2": "Twój komunikat reklamowy będzie zauważalny i dopasowany do odbiorcy.",
+    "formats": [
+      {
+        "title": "Mobile Banner HD",
+        "description": "640x100 px",
+        "url": "URL banner 1"
+      },
+      {
+        "title": "Rectangle Banner",
+        "description": "300x250 px",
+        "url": "URL banner 2"
+      },
+      {
+        "title": "Halfpage Ad",
+        "description": "300x600 px",
+        "url": "URL banner 3"
+      }
+    ]
+  },
+  "video": {
+    "title": "Video Ads",
+    "description_1": "Krótkie formaty video to przyszłość.",
+    "description_2": "Wykorzystaj potencjał reklamowy spotów video na smartfonach.",
+    "formats": [
+      {
+        "title": "Pre-roll Video Ad",
+        "description": "Krótkie, niepomijalne wideo",
+        "url": "mobiemapp01"
+      },
+      {
+        "title": "Video Ad z endcard",
+        "description": "Spot z ekranem końcowym",
+        "url": "URL video 2"
+      },
+      {
+        "title": "Rewarded Video",
+        "description": "Wysoki poziom widoczności",
+        "url": "URL video 3"
+      },
+      {
+        "title": "Rewarded Video z endcard",
+        "description": "Spot z ekranem końcowym",
+        "url": "URL video 4"
+      }
+    ]
+  },
+  "push": {
+    "title": "Push Ads",
+    "description_1": "Docieraj do szczegółowo sprofilowanych użytkowników.",
+    "description_2": "User otrzymuje reklamę w głównym oknie powiadomień telefonu.",
+    "formats": [
+      {
+        "title": "Push graficzny",
+        "description": "Ikona + Tytuł + Banner",
+        "url": "mobiemapp06"
+      },
+      {
+        "title": "Push tekstowy",
+        "description": "Ikona + Tytuł + Tekst",
+        "url": "mobiemapp08"
+      }
+    ]
+  },
+  "fullpage": {
+    "title": "Fullpage Ads",
+    "description_1": "Pełnoekranowe reklamy, które pozwalają wykorzystać możliwości smartfona.",
+    "description_2": "Formaty atrakcyjne wizualnie, angażujące i interaktywne.",
+    "formats": [
+      {
+        "title": "Interstitial Display",
+        "description": "Reklama pełnoekranowa",
+        "url": "mobiemapp01"
+      },
+      {
+        "title": "Interstitial Video",
+        "description": "Fullpage z osadzonym wideo",
+        "url": "URL fullpage 2"
+      },
+      {
+        "title": "Animation Rich Media",
+        "description": "Atrakcyjna wizualnie",
+        "url": "URL fullpage 3"
+      },
+      {
+        "title": "Scratch Rich Media",
+        "description": "Gest przetarcia ekranu",
+        "url": "mobiemapp01"
+      },
+      {
+        "title": "Slider Rich Media",
+        "description": "Przesuwaj i porównaj",
+        "url": "URL fullpage 2"
+      },
+      {
+        "title": "Game Rich Media",
+        "description": "Interaktywne zaangażowanie",
+        "url": "URL fullpage 3"
+      },
+      {
+        "title": "Quiz Rich Media",
+        "description": "Przyciągnij uwagę na dłużej",
+        "url": "mobiemapp01"
+      },
+      {
+        "title": "Memo Rich Media",
+        "description": "Prosta gra logiczna",
+        "url": "URL fullpage 2"
+      },
+      {
+        "title": "Fullpage Story Ad",
+        "description": "Więcej informacji na ekranie",
+        "url": "URL fullpage 3"
+      },
+      {
+        "title": "Fullpage Legal Prawny",
+        "description": "Format do specjalnych zadań",
+        "url": "URL fullpage 3"
+      }
+    ]
+  }
+}

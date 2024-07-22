@@ -1,0 +1,156 @@
+[
+  {
+    "id": 1,
+    "client": "Biedronka",
+    "name": "Świeżaki",
+    "startDate": "2022-06-10T12:02:10.000Z",
+    "endDate": "2022-06-12T15:09:00.000Z",
+    "alreadyTested": false,
+    "newCampaign": true,
+    "running": false,
+    "history": false
+  },
+  {
+    "id": 2,
+    "client": "Lidl",
+    "name": "Lidlaki",
+    "startDate": "2023-03-15T19:09:12.000Z",
+    "endDate": "2023-04-12T12:44:00.000Z",
+    "alreadyTested": true,
+    "newCampaign": false,
+    "running": false,
+    "history": false
+  },
+  {
+    "id": 3,
+    "client": "Kaufland",
+    "name": "Kauflandziaki",
+    "startDate": "2023-04-05T11:41:20.000Z",
+    "endDate": "2022-04-07T17:44:30.000Z",
+    "alreadyTested": true,
+    "newCampaign": false,
+    "running": true,
+    "history": false
+  },
+  {
+    "id": 4,
+    "client": "Biedronka",
+    "name": "Świeżaki",
+    "startDate": "2022-06-10T12:02:10.000Z",
+    "endDate": "2022-06-12T15:09:00.000Z",
+    "alreadyTested": true,
+    "newCampaign": false,
+    "running": true,
+    "history": false
+  },
+  {
+    "id": 5,
+    "client": "Lidl",
+    "name": "Lidlaki",
+    "startDate": "2023-03-15T19:09:12.000Z",
+    "endDate": "2023-04-12T12:44:00.000Z",
+    "alreadyTested": true,
+    "newCampaign": false,
+    "running": true,
+    "history": false
+  },
+  {
+    "id": 6,
+    "client": "Kaufland",
+    "name": "Kauflandziaki",
+    "startDate": "2023-04-05T11:41:20.000Z",
+    "endDate": "2022-04-07T17:44:30.000Z",
+    "alreadyTested": true,
+    "newCampaign": false,
+    "running": true,
+    "history": false
+  },
+  {
+    "id": 7,
+    "client": "Intermarche",
+    "name": "Intermarszaki",
+    "startDate": "2021-12-10T16:02:10.000Z",
+    "endDate": "2021-12-12T12:09:00.000Z",
+    "alreadyTested": true,
+    "newCampaign": false,
+    "running": false,
+    "history": true
+  },
+  {
+    "id": 8,
+    "client": "Castorama",
+    "name": "Castoramiaki",
+    "startDate": "2022-03-15T19:09:12.000Z",
+    "endDate": "2022-04-12T12:44:00.000Z",
+    "alreadyTested": true,
+    "newCampaign": false,
+    "running": false,
+    "history": true
+  },
+  {
+    "id": 9,
+    "client": "Mrówka",
+    "name": "Mrówkojadki",
+    "startDate": "2022-02-02T11:11:20.000Z",
+    "endDate": "2022-02-15T12:32:30.000Z",
+    "alreadyTested": true,
+    "newCampaign": false,
+    "running": false,
+    "history": true
+  },
+  {
+    "id": 10,
+    "client": "Żabka",
+    "name": "Żabkojady",
+    "startDate": "2020-03-02T12:02:10.000Z",
+    "endDate": "2020-06-12T43:09:00.000Z",
+    "alreadyTested": true,
+    "newCampaign": false,
+    "running": false,
+    "history": true
+  },
+  {
+    "id": 11,
+    "client": "Selgros",
+    "name": "Selgrosiaki",
+    "startDate": "2019-03-15T19:09:12.000Z",
+    "endDate": "2019-04-12T12:44:00.000Z",
+    "alreadyTested": true,
+    "newCampaign": false,
+    "running": false,
+    "history": true
+  },
+  {
+    "id": 12,
+    "client": "Kaufland",
+    "name": "Kauflandziaki",
+    "startDate": "2023-08-15T14:41:20.000Z",
+    "endDate": "2022-10-17T17:21:30.000Z",
+    "alreadyTested": true,
+    "newCampaign": false,
+    "running": false,
+    "history": true
+  },
+  {
+    "id": 13,
+    "client": "Mrówka",
+    "name": "Mrówkojady",
+    "startDate": "2023-08-15T14:41:20.000Z",
+    "endDate": "2022-10-17T17:21:30.000Z",
+    "alreadyTested": true,
+    "newCampaign": false,
+    "running": false,
+    "history": true
+  },
+  {
+    "id": 14,
+    "client": "Dino",
+    "name": "Diniaki",
+    "startDate": "2023-08-15T14:41:20.000Z",
+    "endDate": "2022-10-17T17:21:30.000Z",
+    "alreadyTested": true,
+    "newCampaign": false,
+    "running": false,
+    "history": true
+  }
+]
