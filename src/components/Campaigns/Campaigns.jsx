@@ -5,6 +5,17 @@ import Navigation from "../Navigation/Navigation";
 import search_icon from "./img/search.svg";
 import arrow_back from "./img/arrow_back.svg";
 import data from "./campaignsData.json";
+import { Link } from "react-router-dom";
+
+export const getDate = (date) => {
+  return (
+    date.getFullYear() +
+    "." +
+    ("0" + (date.getMonth() + 1)).slice(-2) +
+    "." +
+    ("0" + date.getDate()).slice(-2)
+  );
+};
 
 export default function Campaigns() {
   const [searchActive, setSearchActive] = useState(false);
@@ -63,23 +74,24 @@ export default function Campaigns() {
                 {data.map((item) => {
                   if (!item.history && !item.running) {
                     return (
-                      <div
-                        className={
-                          "campaign " +
-                          (item.newCampaign
-                            ? "new"
-                            : item.alreadyTested &&
-                              !item.history &&
-                              !item.running
-                            ? "tested"
-                            : "")
-                        }
-                        key={"campaign_" + item.id}
-                      >
-                        <div className="client">{item.client}</div>
-                        <div className="name">{item.name}</div>
-                        <div className="subtext">{"Przetestuj teraz"}</div>
-                      </div>
+                      <Link to={item.id.toString()} key={"campaign_" + item.id}>
+                        <div
+                          className={
+                            "campaign " +
+                            (item.newCampaign
+                              ? "new"
+                              : item.alreadyTested &&
+                                !item.history &&
+                                !item.running
+                              ? "tested"
+                              : "")
+                          }
+                        >
+                          <div className="client">{item.client}</div>
+                          <div className="name">{item.name}</div>
+                          <div className="subtext">{"Przetestuj teraz"}</div>
+                        </div>
+                      </Link>
                     );
                   }
                 })}
@@ -89,23 +101,28 @@ export default function Campaigns() {
                 {data.map((item) => {
                   if (item.running) {
                     return (
-                      <div
-                        className={
-                          "campaign " +
-                          (item.newCampaign
-                            ? "new"
-                            : item.alreadyTested &&
-                              !item.history &&
-                              !item.running
-                            ? "tested"
-                            : "")
-                        }
-                        key={"campaign_" + item.id}
-                      >
-                        <div className="client">{item.client}</div>
-                        <div className="name">{item.name}</div>
-                        <div className="subtext">{"Przetestuj teraz"}</div>
-                      </div>
+                      <Link to={item.id.toString()} key={"campaign_" + item.id}>
+                        <div
+                          className={
+                            "campaign " +
+                            (item.newCampaign
+                              ? "new"
+                              : item.alreadyTested &&
+                                !item.history &&
+                                !item.running
+                              ? "tested"
+                              : "")
+                          }
+                        >
+                          <div className="client">{item.client}</div>
+                          <div className="name">{item.name}</div>
+                          <div className="subtext">
+                            {getDate(new Date(item.startDate)) +
+                              " - " +
+                              getDate(new Date(item.endDate))}
+                          </div>
+                        </div>
+                      </Link>
                     );
                   }
                 })}
@@ -117,13 +134,17 @@ export default function Campaigns() {
                 {data.map((item) => {
                   if (item.history) {
                     return (
-                      <div className="campaign" key={"campaign_" + item.id}>
-                        <div className="client history">{item.client}</div>
-                        <div className="name history">{item.name}</div>
-                        <div className="subtext history">
-                          {"Przetestuj teraz"}
+                      <Link to={item.id.toString()} key={"campaign_" + item.id}>
+                        <div className="campaign">
+                          <div className="client history">{item.client}</div>
+                          <div className="name history">{item.name}</div>
+                          <div className="subtext history">
+                            {getDate(new Date(item.startDate)) +
+                              " - " +
+                              getDate(new Date(item.endDate))}
+                          </div>
                         </div>
-                      </div>
+                      </Link>
                     );
                   }
                 })}
@@ -132,6 +153,7 @@ export default function Campaigns() {
           </div>
         )}
       </section>
+
       <Navigation />
     </>
   );

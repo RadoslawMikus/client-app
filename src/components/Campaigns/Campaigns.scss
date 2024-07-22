@@ -154,7 +154,9 @@
       color: #46464f;
       font-size: 14px;
       font-weight: 500;
-      padding: 4% 10%;
+      padding: 5% 10%;
+      letter-spacing: 1.25px;
+      line-height: 14px;
 
       &.active {
         color: #3149e8;
@@ -181,12 +183,91 @@
       }
 
       .activeBar {
-        left: 12%;
+        left: 12.3%;
       }
 
       .historyBar {
         left: 62.5%;
       }
     }
+  }
+}
+
+.singleCampaign {
+  .header {
+    height: 20vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 15px;
+    gap: 10px;
+    background-color: #3149e8;
+
+    a {
+      color: #fff;
+    }
+
+    h1 {
+      font: {
+        weight: 400;
+        size: 24px;
+      }
+      margin-left: 5px;
+      line-height: 32px;
+    }
+  }
+
+  .badgeNew,
+  .badgeTested,
+  .badgeRunning,
+  .badgeEnded {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #fff;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    margin: 15px 15px 0;
+    font-weight: 500;
+    font-size: 11px;
+  }
+
+  .badgeTested {
+    background-color: #00c28f;
+  }
+
+  .fullDescription {
+    width: 100%;
+    padding: 0 15px;
+    margin: 20px auto;
+  }
+
+  .campaignTitle {
+    line-height: 32px;
+    color: #3149e8;
+    font-weight: 400;
+    font-size: 24px;
+  }
+
+  .sectionTitle {
+    margin: 30px 0 0;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: #777680;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .dates {
+    line-height: 28px;
+    font-weight: 400;
+    font-size: 22px;
+  }
+
+  .arrowBack {
+    filter: invert(88%) sepia(100%) saturate(0%) hue-rotate(166deg)
+      brightness(105%) contrast(101%);
   }
 }
