@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getDate } from "./Campaigns";
 import arrow_back from "./img/arrow_back.svg";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function SingleCampaign() {
   const campaignsCtx = useContext(CampaignsContext);
@@ -18,12 +19,13 @@ export default function SingleCampaign() {
   };
 
   let campaign = getCampaignData();
-
+  let location = useLocation();
+  console.log(location.state.filter);
   return (
     <>
       <section className="singleCampaign">
         <div className="header">
-          <Link to="/campaigns">
+          <Link to={"/campaigns?mode=" + location.state.filter}>
             <span className="arrowBack">
               <img src={arrow_back} alt="Powrót" />
             </span>

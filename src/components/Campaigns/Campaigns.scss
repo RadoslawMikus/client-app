@@ -21,7 +21,7 @@
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.1px;
-    padding: 7% 3.5% 2%;
+    padding: 7% 3.5% 2% 1.9%;
   }
 
   .search {
@@ -52,7 +52,7 @@
   .searchActive {
     border-radius: 0;
     background-color: transparent;
-    padding: 5% 5% 5% 15%;
+    padding: 20px 5% 20px 15%;
     border-bottom: 1px solid #777680;
     outline: 0;
     text-align: left;
@@ -154,7 +154,7 @@
       color: #46464f;
       font-size: 14px;
       font-weight: 500;
-      padding: 5% 10%;
+      padding: 20px 10%;
       letter-spacing: 1.25px;
       line-height: 14px;
 

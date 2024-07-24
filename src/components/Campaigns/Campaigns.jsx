@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Campaigns.scss";
 import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
@@ -6,6 +6,7 @@ import search_icon from "./img/search.svg";
 import arrow_back from "./img/arrow_back.svg";
 import data from "./campaignsData.json";
 import { Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 export const getDate = (date) => {
   return (
@@ -19,7 +20,14 @@ export const getDate = (date) => {
 
 export default function Campaigns() {
   const [searchActive, setSearchActive] = useState(false);
-  const [filter, setFilter] = useState("active");
+  const [searchParams, setSearchParams] = useSearchParams();
+  let filter = "active";
+
+  if (!searchParams.get("mode")) {
+    filter = "active";
+  } else {
+    filter = searchParams.get("mode");
+  }
 
   return (
     <>
@@ -47,13 +55,13 @@ export default function Campaigns() {
           <div className="filterButtons">
             <button
               className={"activeBtn " + (filter === "active" ? "active" : "")}
-              onClick={() => setFilter("active")}
+              onClick={() => setSearchParams("?mode=active")}
             >
               Aktualne
             </button>
             <button
               className={"historyBtn " + (filter === "history" ? "active" : "")}
-              onClick={() => setFilter("history")}
+              onClick={() => setSearchParams("?mode=history")}
             >
               Historia
             </button>
@@ -74,7 +82,11 @@ export default function Campaigns() {
                 {data.map((item) => {
                   if (!item.history && !item.running) {
                     return (
-                      <Link to={item.id.toString()} key={"campaign_" + item.id}>
+                      <Link
+                        to={item.id.toString()}
+                        state={{ filter }}
+                        key={"campaign_" + item.id}
+                      >
                         <div
                           className={
                             "campaign " +
@@ -101,7 +113,11 @@ export default function Campaigns() {
                 {data.map((item) => {
                   if (item.running) {
                     return (
-                      <Link to={item.id.toString()} key={"campaign_" + item.id}>
+                      <Link
+                        to={item.id.toString()}
+                        state={{ filter }}
+                        key={"campaign_" + item.id}
+                      >
                         <div
                           className={
                             "campaign " +
@@ -134,7 +150,11 @@ export default function Campaigns() {
                 {data.map((item) => {
                   if (item.history) {
                     return (
-                      <Link to={item.id.toString()} key={"campaign_" + item.id}>
+                      <Link
+                        to={item.id.toString()}
+                        state={{ filter }}
+                        key={"campaign_" + item.id}
+                      >
                         <div className="campaign">
                           <div className="client history">{item.client}</div>
                           <div className="name history">{item.name}</div>
