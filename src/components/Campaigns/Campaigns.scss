@@ -271,3 +271,45 @@
       brightness(105%) contrast(101%);
   }
 }
+
+.searchFilters {
+  display: flex;
+  margin: 10px 0;
+  color: #46464f;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 142.857%;
+  letter-spacing: 0.1px;
+
+  button {
+    padding: 5px 10px;
+    border: 1px solid #777680;
+    background-color: transparent;
+    border-radius: 5px;
+    margin: 0 5px 0 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    color: #46464f;
+
+    &.active {
+      background-color: #d5e3ff;
+    }
+
+    img {
+      padding-left: 10px;
+    }
+  }
+}
+
+.searchFilter {
+  border: 1px solid white;
+  padding: 10px;
+
+  &:first-of-type {
+    margin: 0 5px 0 8%;
+  }
+}

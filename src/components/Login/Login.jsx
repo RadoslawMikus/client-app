@@ -11,6 +11,8 @@ export default function Login() {
   const [modalOpen, setModalOpen] = useState(false);
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
+  const [loginPlaceholder, setLoginPlaceholder] = useState("");
+  const [passwordPlaceholder, setPasswordPlaceholder] = useState("");
 
   function handleModal() {
     setModalOpen((current) => !current);
@@ -44,12 +46,24 @@ export default function Login() {
             <span className="icon">
               <img src={account} />
             </span>
+
+            <span
+              className={
+                "customPlaceholder " +
+                (login !== "" || loginPlaceholder !== "" ? "active" : "")
+              }
+            >
+              Login
+            </span>
+
             <input
               type="email"
-              placeholder="Login"
+              placeholder={loginPlaceholder}
               id="mail"
               name="login"
               onChange={(e) => setLogin(e.target.value)}
+              onFocus={() => setLoginPlaceholder("Adres e-mail")}
+              onBlur={() => setLoginPlaceholder("")}
             />
           </div>
 
@@ -57,12 +71,24 @@ export default function Login() {
             <span className="icon">
               <img src={key} />
             </span>
+
+            <span
+              className={
+                "customPlaceholder " +
+                (password !== "" || passwordPlaceholder !== "" ? "active" : "")
+              }
+            >
+              Hasło
+            </span>
+
             <input
               type="password"
-              placeholder="Hasło"
+              placeholder={passwordPlaceholder}
               id="password"
               name="password"
               onChange={(e) => setPassword(e.target.value)}
+              onFocus={() => setPasswordPlaceholder("Twoje hasło")}
+              onBlur={() => setPasswordPlaceholder("")}
             />
           </div>
 

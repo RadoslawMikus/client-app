@@ -20,7 +20,7 @@ export default function SingleCampaign() {
 
   let campaign = getCampaignData();
   let location = useLocation();
-  console.log(location.state.filter);
+
   return (
     <>
       <section className="singleCampaign">
