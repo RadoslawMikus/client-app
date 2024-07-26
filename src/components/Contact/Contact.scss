@@ -29,6 +29,8 @@ $wannatalk-color: #5f5e62;
         weight: 400;
         size: 32px;
       }
+      margin-bottom: 16px;
+      text-align: center;
       line-height: 40px;
       color: $header-color;
       width: 70%;
@@ -36,7 +38,9 @@ $wannatalk-color: #5f5e62;
 
     p {
       width: 75%;
-      margin-top: 2%;
+      margin-bottom: 12px;
+      text-align: center;
+      letter-spacing: 0.25px;
     }
   }
 
@@ -45,6 +49,7 @@ $wannatalk-color: #5f5e62;
     color: $header2-color;
     width: 75%;
     margin: 2% auto;
+    text-align: center;
     font: {
       weight: 400;
       size: 28px;
@@ -82,6 +87,10 @@ $wannatalk-color: #5f5e62;
     gap: 10%;
     margin: 2% 0;
     font-size: 14px;
+
+    span {
+      letter-spacing: 0.25px;
+    }
   }
 }
 

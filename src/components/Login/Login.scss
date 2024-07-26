@@ -1,5 +1,5 @@
 * {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
 }
 
 .login {
@@ -7,12 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  // height: 100%;
   width: 100%;
-  //   align-items: stretch;
-  //   margin: 0 auto;
-  //   font-family: "Roboto";
-  //   font-style: normal;
   overflow: auto;
 
   h1 {
@@ -20,6 +15,7 @@
     font-size: 32px;
     line-height: 40px;
     text-align: center;
+    margin-bottom: 16px;
   }
 
   h2 {
@@ -42,7 +38,7 @@
     width: 90%;
     font-size: 16px;
     letter-spacing: 0.5px;
-    padding: 27px 0 8px;
+    padding: 25px 0 7px;
     background-color: transparent;
     outline: none;
   }
@@ -58,7 +54,7 @@
     transform-origin: top left;
 
     &.active {
-      left: 11.7%;
+      left: 10.6%;
       top: 12%;
       color: #8791c6;
       // transform: scale(0.87);
@@ -70,7 +66,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding: 8% 15% 5%;
+    padding: 8% 15% 8%;
   }
 
   p {
@@ -81,7 +77,6 @@
 }
 
 .login-btn {
-  //   font-family: "Roboto";
   margin-top: 5%;
   height: 40px;
   width: 100%;
@@ -103,7 +98,7 @@
   justify-content: space-around;
   align-items: center;
   background-color: #f5f5f5;
-  padding: 0 10px;
+  padding: 0 3px;
   border-radius: 4px 4px 0 0;
   position: relative;
 
@@ -116,7 +111,11 @@
     justify-content: center;
     align-items: center;
     width: 10%;
-    padding: 15px 15px 15px 15px;
+    // padding: 2px;
+
+    img {
+      width: 27px;
+    }
   }
 }
 
@@ -132,6 +131,7 @@
   line-height: 16px;
   width: 50%;
   padding-bottom: 80px;
+  letter-spacing: 0.25px;
 }
 
 .about_section {
@@ -139,6 +139,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
+  letter-spacing: 0.25px;
 }
 
 #pop_up {

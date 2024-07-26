@@ -23,15 +23,20 @@ $banner-color: #11e0e2;
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    margin: 10px auto 20px;
-    padding: 10px {
-      height: 140px;
-    }
+    margin: 10px 36px 20px;
+    height: 160px;
+    padding: 10px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  img {
+    height: 140px;
   }
 
   h2 {
     line-height: 28px;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
+    letter-spacing: 0.275px;
     font: {
       weight: 400;
       size: 22px;
@@ -40,6 +45,9 @@ $banner-color: #11e0e2;
 
   h3 {
     line-height: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 0.13125px;
+
     font: {
       weight: 400;
       size: 14px;

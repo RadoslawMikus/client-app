@@ -8,7 +8,7 @@ import data from "./campaignsData.json";
 import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import close from "./img/close.svg";
-import { buildQueries } from "@testing-library/react";
+import closeGrey from "./img/close_grey.svg";
 
 export const getDate = (date) => {
   return (
@@ -35,6 +35,29 @@ export default function Campaigns() {
   const [tab, setTab] = useState("active");
   const [searchFilter, setSearchFilter] = useState(undefined);
   const [currentSearch, setCurrentSearch] = useState(data);
+  const [firstRun, setFirstRun] = useState(true);
+  const [recentSearch, setRecentSearch] = useState([5, 2, 13, 10, 7]);
+
+  const getRecentSearch = () => {
+    return data.filter((campaign) => recentSearch.includes(campaign.id));
+  };
+
+  console.log(getRecentSearch());
+
+  const removeFromHistory = (e, id) => {
+    e.stopPropagation();
+    e.preventDefault();
+    recentSearch.splice(recentSearch.indexOf(id), 1);
+    setRecentSearch((recent) => [...recent]);
+  };
+
+  // useEffect(() => {
+  // console.log();
+  // setSearchActive(searchParams.get("active"));
+  // setTab(searchParams.get("tab"));
+  // setSearchFilter(searchParams.get("filter"));
+  // setSearchBarValue(searchParams.get("search"));
+  // }, [searchParams]);
 
   useEffect(() => {
     let queryParams = {
@@ -55,18 +78,18 @@ export default function Campaigns() {
       return queryString;
     };
 
-    console.log(buildQueryString(filteredParams));
+    buildQueryString(filteredParams);
 
     if (
-      !queryParams.active &&
-      queryParams.tab === "active" &&
-      queryParams.filter === undefined &&
-      queryParams.search === ""
+      queryParams.active ||
+      firstRun !== true ||
+      queryParams.filter !== undefined ||
+      queryParams.search !== ""
     ) {
-    } else {
       setSearchParams(buildQueryString(filteredParams));
+    } else {
     }
-  }, [searchBarValue, searchActive, searchFilter, tab]);
+  }, [searchBarValue, searchActive, searchFilter, tab, firstRun]);
 
   const checkInclude = (campaignToCheck, value = searchBarValue) => {
     if (
@@ -151,8 +174,8 @@ export default function Campaigns() {
               src={arrow_back}
               className="arrowBack"
               onClick={() => {
-                setSearchActive(false);
                 setSearchFilter(undefined);
+                setSearchActive(false);
               }}
             />
           )}
@@ -160,7 +183,10 @@ export default function Campaigns() {
             id="search"
             className={"search " + (searchActive ? "searchActive" : "")}
             placeholder="Wyszukaj kampanię"
-            onClick={() => setSearchActive(true)}
+            onClick={() => {
+              setSearchActive(true);
+              setFirstRun(false);
+            }}
             onChange={handleSearch}
           ></input>
           {!searchActive && <img src={search_icon} className="searchIcon" />}
@@ -199,13 +225,19 @@ export default function Campaigns() {
           <div className="filterButtons">
             <button
               className={"activeBtn " + (tab === "active" ? "active" : "")}
-              onClick={() => setTab("active")}
+              onClick={() => {
+                setTab("active");
+                setFirstRun(false);
+              }}
             >
               Aktualne
             </button>
             <button
               className={"historyBtn " + (tab === "history" ? "active" : "")}
-              onClick={() => setTab("history")}
+              onClick={() => {
+                setTab("history");
+                setFirstRun(false);
+              }}
             >
               Historia
             </button>
@@ -318,27 +350,92 @@ export default function Campaigns() {
         )}
 
         <div className="searchResults">
-          {currentSearch.map((item) => {
-            return (
-              <Link
-                to={item.id.toString()}
-                state={{ tab }}
-                key={"campaign_" + item.id}
-              >
-                <div className={"campaign"}>
-                  <div className="client">{item.client}</div>
-                  <div className="name">{item.name}</div>
-                  <div className="subtext">
-                    {!item.running && !item.history
-                      ? "Przetestuj teraz"
-                      : getDate(new Date(item.startDate)) +
-                        " - " +
-                        getDate(new Date(item.endDate))}
+          {searchActive && searchBarValue === "" && (
+            <h3>Ostatnio wyszukiwane:</h3>
+          )}
+
+          {searchActive &&
+            searchBarValue !== "" &&
+            currentSearch.map((item) => {
+              return (
+                <Link
+                  to={item.id.toString()}
+                  state={`?${searchParams.toString()}`}
+                  key={"campaign_" + item.id}
+                >
+                  <div
+                    className={
+                      "campaign " +
+                      (item.newCampaign
+                        ? "new"
+                        : item.alreadyTested && !item.history && !item.running
+                        ? "tested"
+                        : "")
+                    }
+                  >
+                    <div
+                      className={"client " + (item.history ? "history" : "")}
+                    >
+                      {item.client}
+                    </div>
+                    <div className={"name " + (item.history ? "history" : "")}>
+                      {item.name}
+                    </div>
+                    <div
+                      className={"subtext " + (item.history ? "history" : "")}
+                    >
+                      {!item.running && !item.history
+                        ? "Przetestuj teraz"
+                        : getDate(new Date(item.startDate)) +
+                          " - " +
+                          getDate(new Date(item.endDate))}{" "}
+                      {item.history && "(zakończona)"}
+                    </div>
                   </div>
-                </div>
-              </Link>
-            );
-          })}
+                </Link>
+              );
+            })}
+
+          {searchActive &&
+            searchBarValue === "" &&
+            getRecentSearch().map((item) => {
+              return (
+                <Link
+                  to={item.id.toString()}
+                  state={`?${searchParams.toString()}`}
+                  key={"campaign_" + item.id}
+                >
+                  <div className="campaign">
+                    <div
+                      className={"client " + (item.history ? "history" : "")}
+                    >
+                      {item.client}
+                    </div>
+                    <div className={"name " + (item.history ? "history" : "")}>
+                      {item.name}
+                    </div>
+                    <div
+                      className={"subtext " + (item.history ? "history" : "")}
+                    >
+                      {!item.running && !item.history
+                        ? "Przetestuj teraz"
+                        : getDate(new Date(item.startDate)) +
+                          " - " +
+                          getDate(new Date(item.endDate))}{" "}
+                      {item.history && "(zakończona)"}
+                    </div>
+                    <span id={"remove_" + item.id} className=" close">
+                      <img
+                        src={closeGrey}
+                        onClick={(e) => {
+                          removeFromHistory(e, item.id);
+                        }}
+                      />
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
         </div>
       </section>
 

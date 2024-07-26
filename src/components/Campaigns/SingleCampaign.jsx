@@ -20,29 +20,82 @@ export default function SingleCampaign() {
 
   let campaign = getCampaignData();
   let location = useLocation();
+  const listOfFormats = [
+    {
+      title: "Fullpage Rich Media",
+      description: "10.02.2023 - 18.03.2023",
+      url: "mobiemapp01",
+    },
+    {
+      title: "Notyfikacja graficzna",
+      description: "21.02.2023 - 24.03.2023",
+      url: "URL kreacji 2",
+    },
+  ];
+
+  console.log(location);
 
   return (
     <>
       <section className="singleCampaign">
-        <div className="header">
-          <Link to={"/campaigns?mode=" + location.state.filter}>
+        <div className={"header " + (campaign.history ? "historyHeader" : "")}>
+          <Link to={"/campaigns" + location.state}>
             <span className="arrowBack">
               <img src={arrow_back} alt="Powrót" />
             </span>
           </Link>
           <h1>{campaign.client}</h1>
         </div>
-        <div className="badgeTested">Kampania przetestowana</div>
+        {campaign.newCampaign && (
+          <div className="badgeNew">Kampania do przetestowania</div>
+        )}
+
+        {!campaign.running && !campaign.history && campaign.alreadyTested && (
+          <div className="badgeTested">Kampania przetestowana</div>
+        )}
+
+        {campaign.running && (
+          <div className="badgeRunning">Kampania uruchomiona</div>
+        )}
+
+        {campaign.history && (
+          <div className="badgeEnded">Kampania zakończona</div>
+        )}
         <div className="fullDescription">
           {" "}
           <div className="sectionTitle">Nazwa kampanii</div>
-          <div className="campaignTitle">{campaign.name}</div>
+          <div
+            className={
+              "campaignTitle " + (campaign.history ? "historyTitle" : "")
+            }
+          >
+            {campaign.name}
+          </div>
           <div className="sectionTitle">Czas trwania</div>
           <h2 className="dates">
             {getDate(new Date(campaign.startDate)) +
               " - " +
               getDate(new Date(campaign.endDate))}
           </h2>
+        </div>
+
+        <div className="format_list">
+          {listOfFormats.map((format) => {
+            return (
+              <div className="format" key={format.description}>
+                <div className="leftFormat">
+                  <h2>{format.title}</h2>
+                  <p>{format.description}</p>
+                </div>
+                {!campaign.alreadyTested && <button>Przetestuj</button>}
+                {campaign.alreadyTested && (
+                  <button className={campaign.history ? "historyButton" : ""}>
+                    Zobacz
+                  </button>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
     </>
