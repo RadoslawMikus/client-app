@@ -5,6 +5,7 @@ import mockup from "./img/contact_mockup.png";
 import rectangle from "./img/rectangle.png";
 import Carousel from "react-bootstrap/Carousel";
 import temp from "./img/welcome_mockup.png";
+import { useEffect, useState } from "react";
 
 export default function Contact() {
   return (

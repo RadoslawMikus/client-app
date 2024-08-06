@@ -22,11 +22,13 @@ export default function SingleCampaign() {
   let location = useLocation();
   const listOfFormats = [
     {
+      id: 1,
       title: "Fullpage Rich Media",
       description: "10.02.2023 - 18.03.2023",
       url: "mobiemapp01",
     },
     {
+      id: 2,
       title: "Notyfikacja graficzna",
       description: "21.02.2023 - 24.03.2023",
       url: "URL kreacji 2",
@@ -82,17 +84,17 @@ export default function SingleCampaign() {
         <div className="format_list">
           {listOfFormats.map((format) => {
             return (
-              <div className="format" key={format.description}>
+              <div className="format" key={format.id}>
                 <div className="leftFormat">
                   <h2>{format.title}</h2>
                   <p>{format.description}</p>
                 </div>
-                {!campaign.alreadyTested && <button>Przetestuj</button>}
-                {campaign.alreadyTested && (
+
+                <Link to={`${format.url}`}>
                   <button className={campaign.history ? "historyButton" : ""}>
-                    Zobacz
+                    {campaign.alreadyTested ? "Zobacz" : "Przetestuj"}
                   </button>
-                )}
+                </Link>
               </div>
             );
           })}

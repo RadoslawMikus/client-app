@@ -4,15 +4,26 @@ import welcome from "./img/welcome_mockup.png";
 import "./Login.scss";
 import key from "./img/key.svg";
 import account from "./img/account_box.svg";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthorizationContext } from "../AuthorizationContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const authContext = useContext(AuthorizationContext);
   const [modalOpen, setModalOpen] = useState(false);
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [loginPlaceholder, setLoginPlaceholder] = useState("");
   const [passwordPlaceholder, setPasswordPlaceholder] = useState("");
+  const navigate = useNavigate();
+
+  console.log(authContext);
+
+  useEffect(() => {
+    if (authContext.isLogged) {
+      navigate("/campaigns");
+    }
+  }, [authContext.isLogged]);
 
   function handleModal() {
     setModalOpen((current) => !current);
@@ -25,6 +36,10 @@ export default function Login() {
       login: login,
       password: password,
     };
+
+    if (login === "admin" && password === "admin") {
+      authContext.setIsLogged(true);
+    }
 
     console.log(data);
   }

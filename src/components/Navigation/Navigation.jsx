@@ -8,7 +8,7 @@ import mail from "./img/mail.svg";
 export default function Navigation() {
   return (
     <nav>
-      <SingleButton title="Logowanie" icon={key} path="/" />
+      {/* <SingleButton title="Logowanie" icon={key} path="/" /> */}
       <SingleButton title="Kampanie" icon={grade} path="/campaigns" />
       <SingleButton title="Formaty" icon={dashboard} path="/formats" />
       <SingleButton title="Kontakt" icon={mail} path="/contact" />

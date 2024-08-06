@@ -5,10 +5,13 @@ import Navigation from "../Navigation/Navigation";
 import search_icon from "./img/search.svg";
 import arrow_back from "./img/arrow_back.svg";
 import data from "./campaignsData.json";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import close from "./img/close.svg";
 import closeGrey from "./img/close_grey.svg";
+import Iframe from "../Iframe/Iframe";
+import { useContext } from "react";
+import { AuthorizationContext } from "../AuthorizationContext";
 
 export const getDate = (date) => {
   return (
@@ -37,6 +40,9 @@ export default function Campaigns() {
   const [currentSearch, setCurrentSearch] = useState(data);
   const [firstRun, setFirstRun] = useState(true);
   const [recentSearch, setRecentSearch] = useState([5, 2, 13, 10, 7]);
+  const context = useContext(AuthorizationContext);
+
+  console.log(context);
 
   const getRecentSearch = () => {
     return data.filter((campaign) => recentSearch.includes(campaign.id));
