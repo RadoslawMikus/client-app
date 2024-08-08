@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/client-app/static/css/main.4f0110cc.css",
-    "main.js": "/client-app/static/js/main.db5b1bd6.js",
+    "main.css": "/client-app/static/css/main.0c27a63d.css",
+    "main.js": "/client-app/static/js/main.55f0072c.js",
     "static/js/453.5758f9ee.chunk.js": "/client-app/static/js/453.5758f9ee.chunk.js",
     "static/media/contact_mockup.png": "/client-app/static/media/contact_mockup.8c886d4d9730ea1c2213.png",
     "static/media/logo.svg": "/client-app/static/media/logo.e8508eb4995b12642526eec2e02e2886.svg",
@@ -15,12 +15,12 @@
     "static/media/grade.svg": "/client-app/static/media/grade.80707b46b23deaf1933bf118dee2809e.svg",
     "static/media/close_grey.svg": "/client-app/static/media/close_grey.a4ff89c28b8d4bd41a4f3a33699b3407.svg",
     "static/media/arrow_back.svg": "/client-app/static/media/arrow_back.03b5e7a969a15ec79e9be83140711345.svg",
-    "main.4f0110cc.css.map": "/client-app/static/css/main.4f0110cc.css.map",
-    "main.db5b1bd6.js.map": "/client-app/static/js/main.db5b1bd6.js.map",
+    "main.0c27a63d.css.map": "/client-app/static/css/main.0c27a63d.css.map",
+    "main.55f0072c.js.map": "/client-app/static/js/main.55f0072c.js.map",
     "453.5758f9ee.chunk.js.map": "/client-app/static/js/453.5758f9ee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f0110cc.css",
-    "static/js/main.db5b1bd6.js"
+    "static/css/main.0c27a63d.css",
+    "static/js/main.55f0072c.js"
   ]
 }
