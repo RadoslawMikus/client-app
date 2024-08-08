@@ -35,7 +35,7 @@ export default function SingleCampaign() {
     },
   ];
 
-  console.log(location);
+  console.log(location.state);
 
   return (
     <>

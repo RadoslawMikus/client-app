@@ -11,6 +11,8 @@ $wannatalk-color: #5f5e62;
   flex-direction: column;
   align-items: center;
   padding-bottom: 100px;
+  width: 100%;
+  overflow-x: hidden;
 
   .description {
     font: {
@@ -23,6 +25,7 @@ $wannatalk-color: #5f5e62;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 
     h1 {
       font: {
@@ -90,6 +93,14 @@ $wannatalk-color: #5f5e62;
 
     span {
       letter-spacing: 0.25px;
+      display: block;
+      height: 100%;
+      width: 100%;
+
+      &.rectangle_wrapper {
+        width: 80px;
+        height: 80px;
+      }
     }
   }
 }
@@ -145,4 +156,9 @@ $wannatalk-color: #5f5e62;
 
 .carousel {
   width: 90% !important;
+}
+
+.mockup_contact_container {
+  margin: 2% 5%;
+  width: 90%;
 }

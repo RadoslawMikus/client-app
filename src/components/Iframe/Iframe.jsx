@@ -9,12 +9,8 @@ export default function Iframe() {
   const params = useParams();
   const location = useLocation();
   const [path, setPath] = useState(undefined);
-  const advert = useRef(null);
+  const advert = useRef();
   console.log(advert.current);
-  const [ratio, setRatio] = useState(
-    Math.min(window.innerWidth / 720, window.innerHeight / 1280)
-  );
-  const [closingPosition, setClosingPosition] = useState(undefined);
 
   useEffect(() => {
     if (location.pathname.includes("campaigns")) {
@@ -26,12 +22,35 @@ export default function Iframe() {
     }
   }, []);
 
+  const keepRatio = () => {
+    const ratio = Math.min(window.innerWidth / 720, window.innerHeight / 1280);
+    const width = 720 * ratio + "px";
+    const height = 1280 * ratio + "px";
+
+    advert.current.style.width = width;
+    advert.current.style.height = height;
+  };
+
+  useEffect(() => {
+    keepRatio();
+    window.addEventListener("resize", keepRatio);
+    return () => {
+      window.removeEventListener("resize", keepRatio);
+    };
+  }, []);
+
   return (
-    <section id="iframe">
-      <iframe ref={advert} src="https://lpmobiem.civ.pl/mobiemapp01"></iframe>
-      <Link to={path}>
-        <img src={closeBtn} className="close" />
-      </Link>
-    </section>
+    <div className="iframeBg">
+      <section
+        ref={advert}
+        id="iframe"
+        style={{ width: "100%", height: "100%" }}
+      >
+        <iframe src="https://lpmobiem.civ.pl/mobiemapp01"></iframe>
+        <Link to={path}>
+          <img src={closeBtn} className="close" />
+        </Link>
+      </section>
+    </div>
   );
 }

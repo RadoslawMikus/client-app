@@ -266,7 +266,7 @@ export default function Campaigns() {
                     return (
                       <Link
                         to={item.id.toString()}
-                        state={{ tab }}
+                        state={`?tab=${tab}`}
                         key={"campaign_" + item.id}
                       >
                         <div
@@ -297,7 +297,7 @@ export default function Campaigns() {
                     return (
                       <Link
                         to={item.id.toString()}
-                        state={{ tab }}
+                        state={`?tab=${tab}`}
                         key={"campaign_" + item.id}
                       >
                         <div
@@ -334,7 +334,7 @@ export default function Campaigns() {
                     return (
                       <Link
                         to={item.id.toString()}
-                        state={{ tab }}
+                        state={`?tab=${tab}`}
                         key={"campaign_" + item.id}
                       >
                         <div className="campaign">

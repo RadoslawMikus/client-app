@@ -31,7 +31,7 @@ function App() {
         var promise = new Promise(function (resolve, reject) {
           setTimeout(function () {
             resolve("Loaded!");
-          }, 500);
+          }, 0);
         });
 
         console.log(await promise);
