@@ -20,20 +20,6 @@ export default function SingleCampaign() {
 
   let campaign = getCampaignData();
   let location = useLocation();
-  const listOfFormats = [
-    {
-      id: 1,
-      title: "Fullpage Rich Media",
-      description: "10.02.2023 - 18.03.2023",
-      url: "mobiemapp01",
-    },
-    {
-      id: 2,
-      title: "Notyfikacja graficzna",
-      description: "21.02.2023 - 24.03.2023",
-      url: "URL kreacji 2",
-    },
-  ];
 
   console.log(location.state);
 
@@ -80,9 +66,9 @@ export default function SingleCampaign() {
               getDate(new Date(campaign.endDate))}
           </h2>
         </div>
-
+        {console.log(campaign.formats)}
         <div className="format_list">
-          {listOfFormats.map((format) => {
+          {campaign.formats.map((format) => {
             return (
               <div className="format" key={format.id}>
                 <div className="leftFormat">

@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
+import "../../../node_modules/react-loading-skeleton/dist/skeleton.css";
+import { useState } from "react";
 
 export default function SingleButton({ title, icon, path }) {
+  const [isLoaded, setIsLoaded] = useState(false);
   const location = useLocation();
 
   return (
@@ -25,6 +29,9 @@ export default function SingleButton({ title, icon, path }) {
                     ? "icon_active"
                     : ""
                 }
+                onLoad={() => {
+                  setIsLoaded(true);
+                }}
               />
             </div>
             <div className="title">{title}</div>

@@ -61,7 +61,7 @@ function App() {
         <>
           <div className="content">
             {/* <Login /> */}
-            <RouterProvider router={router} />
+            <RouterProvider router={router} basename={process.env.PUBLIC_URL} />
             {/* <Contact /> */}
           </div>
         </>

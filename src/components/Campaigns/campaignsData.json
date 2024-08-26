@@ -5,10 +5,26 @@
     "name": "Świeżaki",
     "startDate": "2022-06-10T12:02:10.000Z",
     "endDate": "2022-06-12T15:09:00.000Z",
+    "orientation": "vertical",
     "alreadyTested": false,
     "newCampaign": true,
     "running": false,
-    "history": false
+    "history": false,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   },
   {
     "id": 2,
@@ -16,10 +32,26 @@
     "name": "Lidlaki",
     "startDate": "2023-03-15T19:09:12.000Z",
     "endDate": "2023-04-12T12:44:00.000Z",
+    "orientation": "vertical",
     "alreadyTested": true,
     "newCampaign": false,
     "running": false,
-    "history": false
+    "history": false,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   },
   {
     "id": 3,
@@ -27,10 +59,26 @@
     "name": "Kauflandziaki",
     "startDate": "2023-04-05T11:41:20.000Z",
     "endDate": "2022-04-07T17:44:30.000Z",
+    "orientation": "vertical",
     "alreadyTested": true,
     "newCampaign": false,
     "running": true,
-    "history": false
+    "history": false,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   },
   {
     "id": 4,
@@ -38,10 +86,26 @@
     "name": "Świeżaki",
     "startDate": "2022-06-10T12:02:10.000Z",
     "endDate": "2022-06-12T15:09:00.000Z",
+    "orientation": "vertical",
     "alreadyTested": true,
     "newCampaign": false,
     "running": true,
-    "history": false
+    "history": false,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   },
   {
     "id": 5,
@@ -49,10 +113,26 @@
     "name": "Lidlaki",
     "startDate": "2023-03-15T19:09:12.000Z",
     "endDate": "2023-04-12T12:44:00.000Z",
+    "orientation": "vertical",
     "alreadyTested": true,
     "newCampaign": false,
     "running": true,
-    "history": false
+    "history": false,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   },
   {
     "id": 6,
@@ -60,10 +140,26 @@
     "name": "Kauflandziaki",
     "startDate": "2023-04-05T11:41:20.000Z",
     "endDate": "2022-04-07T17:44:30.000Z",
+    "orientation": "vertical",
     "alreadyTested": true,
     "newCampaign": false,
     "running": true,
-    "history": false
+    "history": false,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   },
   {
     "id": 7,
@@ -71,10 +167,26 @@
     "name": "Intermarszaki",
     "startDate": "2021-12-10T16:02:10.000Z",
     "endDate": "2021-12-12T12:09:00.000Z",
+    "orientation": "vertical",
     "alreadyTested": true,
     "newCampaign": false,
     "running": false,
-    "history": true
+    "history": true,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   },
   {
     "id": 8,
@@ -82,10 +194,26 @@
     "name": "Castoramiaki",
     "startDate": "2022-03-15T19:09:12.000Z",
     "endDate": "2022-04-12T12:44:00.000Z",
+    "orientation": "vertical",
     "alreadyTested": true,
     "newCampaign": false,
     "running": false,
-    "history": true
+    "history": true,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   },
   {
     "id": 9,
@@ -93,10 +221,26 @@
     "name": "Mrówkojadki",
     "startDate": "2022-02-02T11:11:20.000Z",
     "endDate": "2022-02-15T12:32:30.000Z",
+    "orientation": "vertical",
     "alreadyTested": true,
     "newCampaign": false,
     "running": false,
-    "history": true
+    "history": true,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   },
   {
     "id": 10,
@@ -104,10 +248,26 @@
     "name": "Żabkojady",
     "startDate": "2020-03-02T12:02:10.000Z",
     "endDate": "2020-06-12T12:09:00.000Z",
+    "orientation": "vertical",
     "alreadyTested": true,
     "newCampaign": false,
     "running": false,
-    "history": true
+    "history": true,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   },
   {
     "id": 11,
@@ -115,10 +275,26 @@
     "name": "Selgrosiaki",
     "startDate": "2019-03-15T19:09:12.000Z",
     "endDate": "2019-04-12T12:44:00.000Z",
+    "orientation": "vertical",
     "alreadyTested": true,
     "newCampaign": false,
     "running": false,
-    "history": true
+    "history": true,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   },
   {
     "id": 12,
@@ -126,10 +302,26 @@
     "name": "Kauflandziaki",
     "startDate": "2023-08-15T14:41:20.000Z",
     "endDate": "2022-10-17T17:21:30.000Z",
+    "orientation": "vertical",
     "alreadyTested": true,
     "newCampaign": false,
     "running": false,
-    "history": true
+    "history": true,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   },
   {
     "id": 13,
@@ -137,10 +329,26 @@
     "name": "Mrówkojady",
     "startDate": "2023-08-15T14:41:20.000Z",
     "endDate": "2022-10-17T17:21:30.000Z",
+    "orientation": "vertical",
     "alreadyTested": true,
     "newCampaign": false,
     "running": false,
-    "history": true
+    "history": true,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   },
   {
     "id": 14,
@@ -148,9 +356,25 @@
     "name": "Diniaki",
     "startDate": "2023-08-15T14:41:20.000Z",
     "endDate": "2022-10-17T17:21:30.000Z",
+    "orientation": "vertical",
     "alreadyTested": true,
     "newCampaign": false,
     "running": false,
-    "history": true
+    "history": true,
+    "onHold": false,
+    "formats": [
+      {
+        "id": 1,
+        "title": "Fullpage Rich Media",
+        "description": "10.02.2023 - 18.03.2023",
+        "url": "mobiemapp01"
+      },
+      {
+        "id": 2,
+        "title": "Notyfikacja graficzna",
+        "description": "21.02.2023 - 24.03.2023",
+        "url": "URL kreacji 2"
+      }
+    ]
   }
 ]

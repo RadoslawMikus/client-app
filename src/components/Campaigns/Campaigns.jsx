@@ -5,7 +5,7 @@ import Navigation from "../Navigation/Navigation";
 import search_icon from "./img/search.svg";
 import arrow_back from "./img/arrow_back.svg";
 import data from "./campaignsData.json";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import close from "./img/close.svg";
 import closeGrey from "./img/close_grey.svg";
@@ -41,14 +41,17 @@ export default function Campaigns() {
   const [firstRun, setFirstRun] = useState(true);
   const [recentSearch, setRecentSearch] = useState([5, 2, 13, 10, 7]);
   const context = useContext(AuthorizationContext);
+  const location = useLocation();
 
-  console.log(context);
+  // console.log(context);
 
   const getRecentSearch = () => {
     return data.filter((campaign) => recentSearch.includes(campaign.id));
   };
 
-  console.log(getRecentSearch());
+  // console.log(getRecentSearch());
+
+  // console.log(searchParams.get("active"));
 
   const removeFromHistory = (e, id) => {
     e.stopPropagation();
@@ -56,14 +59,6 @@ export default function Campaigns() {
     recentSearch.splice(recentSearch.indexOf(id), 1);
     setRecentSearch((recent) => [...recent]);
   };
-
-  // useEffect(() => {
-  // console.log();
-  // setSearchActive(searchParams.get("active"));
-  // setTab(searchParams.get("tab"));
-  // setSearchFilter(searchParams.get("filter"));
-  // setSearchBarValue(searchParams.get("search"));
-  // }, [searchParams]);
 
   useEffect(() => {
     let queryParams = {
@@ -106,47 +101,93 @@ export default function Campaigns() {
     }
   };
 
-  const handleSearch = (e) => {
-    console.log(searchFilter);
-    setSearchBarValue(e.target.value);
+  const handleSearch = (
+    e,
+    fromParamsSearch,
+    fromParamsFilter = searchFilter
+  ) => {
+    let txt;
 
-    console.log(e.target.value);
-    if (searchFilter === "untested") {
+    if (fromParamsSearch === undefined) {
+      txt = e.target.value;
+    } else {
+      txt = fromParamsSearch;
+      console.log("TO");
+    }
+
+    setSearchBarValue(txt);
+    console.log("SEARCHFILTER: " + searchFilter);
+
+    console.log(txt);
+    if (fromParamsFilter === "untested") {
       setCurrentSearch(
         data.filter(
           (campaign) =>
-            checkInclude(campaign, e.target.value) &&
-            campaign.newCampaign === true
+            checkInclude(campaign, txt) && campaign.newCampaign === true
         )
       );
-    } else if (searchFilter === "active") {
+    } else if (fromParamsFilter === "active") {
       setCurrentSearch(
         data.filter(
-          (campaign) =>
-            checkInclude(campaign, e.target.value) && campaign.running === true
+          (campaign) => checkInclude(campaign, txt) && campaign.running === true
         )
       );
-    } else if (searchFilter === "history") {
+    } else if (fromParamsFilter === "history") {
+      console.log("teoretycznie to");
       setCurrentSearch(
         data.filter(
-          (campaign) =>
-            checkInclude(campaign, e.target.value) && campaign.history === true
+          (campaign) => checkInclude(campaign, txt) && campaign.history === true
         )
       );
-    } else if (searchFilter === undefined) {
-      setCurrentSearch(
-        data.filter((campaign) => checkInclude(campaign, e.target.value))
-      );
+    } else if (fromParamsFilter === undefined) {
+      setCurrentSearch(data.filter((campaign) => checkInclude(campaign, txt)));
     }
 
     console.log(currentSearch);
   };
 
+  useEffect(() => {
+    if (searchParams.get("tab") !== null) {
+      console.log(searchParams.get("tab"));
+      setTab(searchParams.get("tab"));
+    }
+
+    if (searchParams.get("active") !== null) {
+      console.log(searchParams.get("active") === "true");
+      setSearchActive(searchParams.get("active") === "true");
+    }
+
+    if (searchParams.get("filter") !== null) {
+      console.log("searchParamsFilter:", searchParams.get("filter"));
+      setSearchFilter(searchParams.get("filter"));
+      handleChangingFilter(searchParams.get("filter"));
+    }
+
+    if (searchParams.get("search") !== null) {
+      handleSearch(
+        { target: { value: "" } },
+        searchParams.get("search"),
+        searchParams.get("filter")
+      );
+    }
+
+    console.log("GETTING PARAMS!");
+    const indicator = document.querySelector(".indicator span");
+    const activeBtn = document.querySelector(".activeBtn");
+    const historyBtn = document.querySelector(".historyBtn");
+
+    setTimeout(() => {
+      indicator.style.transition = "0.5s ease";
+      activeBtn.style.transition = "0.3s ease";
+      historyBtn.style.transition = "0.3s ease";
+    }, 600);
+  }, []);
+
   const handleChangingFilter = (value) => {
     setSearchFilter(value);
 
     if (value === searchFilter) {
-      setCurrentSearch(data);
+      setCurrentSearch(data.filter((campaign) => checkInclude(campaign)));
       console.log("USUNIETO!");
       setSearchFilter(undefined);
     } else if (value === "active") {
@@ -182,6 +223,7 @@ export default function Campaigns() {
               onClick={() => {
                 setSearchFilter(undefined);
                 setSearchActive(false);
+                setSearchBarValue("");
               }}
             />
           )}
@@ -193,11 +235,15 @@ export default function Campaigns() {
               setSearchActive(true);
               setFirstRun(false);
             }}
+            value={searchActive ? searchBarValue : ""}
             onChange={handleSearch}
           ></input>
           {!searchActive && <img src={search_icon} className="searchIcon" />}
         </div>
 
+        {console.log(
+          "SBW: " + (searchBarValue !== "" && searchActive === true)
+        )}
         {searchBarValue !== "" && searchActive === true && (
           <div className="searchFilters">
             <button
