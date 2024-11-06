@@ -50,8 +50,8 @@ export default function Iframe() {
     const width = 720 * ratio + "px";
     const height = 1280 * ratio + "px";
 
-    advert.current.style.width = width;
-    advert.current.style.height = height;
+    // advert.current.style.width = width;
+    // advert.current.style.height = height;
   };
 
   useEffect(() => {

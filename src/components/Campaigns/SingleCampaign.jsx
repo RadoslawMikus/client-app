@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 export default function SingleCampaign() {
-  const campaignsCtx = useContext(CampaignsContext);
+  // const campaignsCtx = useContext(CampaignsContext);
+  const [campaignsCtx, setCampaignCtx] = useContext(CampaignsContext);
   const params = useParams();
 
   const getCampaignData = () => {

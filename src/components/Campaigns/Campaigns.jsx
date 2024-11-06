@@ -4,7 +4,7 @@ import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
 import search_icon from "./img/search.svg";
 import arrow_back from "./img/arrow_back.svg";
-import data from "./campaignsData.json";
+// import data from "./campaignsData.json";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import close from "./img/close.svg";
@@ -12,6 +12,7 @@ import closeGrey from "./img/close_grey.svg";
 import Iframe from "../Iframe/Iframe";
 import { useContext } from "react";
 import { AuthorizationContext } from "../AuthorizationContext";
+import { CampaignsContext } from "../CampaignsContext";
 
 export const getDate = (date) => {
   return (
@@ -37,13 +38,31 @@ export default function Campaigns() {
   const [searchBarValue, setSearchBarValue] = useState("");
   const [tab, setTab] = useState("active");
   const [searchFilter, setSearchFilter] = useState(undefined);
-  const [currentSearch, setCurrentSearch] = useState(data);
+  // const [data, setData] = useState([]);
   const [firstRun, setFirstRun] = useState(true);
   const [recentSearch, setRecentSearch] = useState([5, 2, 13, 10, 7]);
   const context = useContext(AuthorizationContext);
+  const [data, setData] = useContext(CampaignsContext);
+  const [currentSearch, setCurrentSearch] = useState(data);
   const location = useLocation();
 
   // console.log(context);
+
+  useEffect(() => {
+    const getCampaigns = async () => {
+      const response = await fetch("http://localhost:4000/campaigns");
+      const json = await response.json();
+      // setData(json);
+      setData(json);
+      console.log("UPDATE KAMPANII!");
+    };
+
+    try {
+      getCampaigns();
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
 
   const getRecentSearch = () => {
     return data.filter((campaign) => recentSearch.includes(campaign.id));
@@ -59,6 +78,14 @@ export default function Campaigns() {
     recentSearch.splice(recentSearch.indexOf(id), 1);
     setRecentSearch((recent) => [...recent]);
   };
+
+  useEffect(() => {
+    // console.log(
+    //   document
+    //     .querySelector(".activeCampaigns > a:nth-child(1)")
+    //     .scrollIntoView({ behavior: "instant" })
+    // );
+  }, []);
 
   useEffect(() => {
     let queryParams = {
@@ -177,9 +204,9 @@ export default function Campaigns() {
     const historyBtn = document.querySelector(".historyBtn");
 
     setTimeout(() => {
-      indicator.style.transition = "0.5s ease";
-      activeBtn.style.transition = "0.3s ease";
-      historyBtn.style.transition = "0.3s ease";
+      // indicator.style.transition = "0.5s ease";
+      // activeBtn.style.transition = "0.3s ease";
+      // historyBtn.style.transition = "0.3s ease";
     }, 600);
   }, []);
 

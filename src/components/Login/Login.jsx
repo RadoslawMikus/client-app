@@ -29,7 +29,7 @@ export default function Login() {
     setModalOpen((current) => !current);
   }
 
-  function handleLogin(e) {
+  async function handleLogin(e) {
     e.preventDefault();
 
     const data = {
@@ -37,11 +37,23 @@ export default function Login() {
       password: password,
     };
 
-    if (login === "admin" && password === "admin") {
+    const response = await fetch("http://localhost:4000/login", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const status = await response.text();
+
+    // if (login === "admin" && password === "admin") {
+    //   authContext.setIsLogged(true);
+    // }
+
+    if (status === "ZALOGOWANO") {
       authContext.setIsLogged(true);
     }
 
-    console.log(data);
+    console.log(status);
   }
 
   return (

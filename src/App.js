@@ -21,6 +21,7 @@ import { redirect } from "react-router-dom";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
+  const [campCtx, setCampCtx] = useState([]);
 
   const router = createBrowserRouter([
     { path: "*", element: <Login /> },
@@ -57,7 +58,7 @@ function App() {
 
   return (
     <AuthorizationContext.Provider value={{ isLogged, setIsLogged }}>
-      <CampaignsContext.Provider value={campaignsData}>
+      <CampaignsContext.Provider value={[campCtx, setCampCtx]}>
         <>
           <div className="content">
             {/* <Login /> */}
