@@ -46,7 +46,7 @@ export default function Campaigns() {
   const [currentSearch, setCurrentSearch] = useState(data);
   const [scrollY, setScrollY] = useState(0);
   const location = useLocation();
-  const [scrollBlock, setScrollBlock] = useState(true);
+  const [scrollBlock, setScrollBlock] = useState(false);
 
   // console.log(context);
 
@@ -211,6 +211,7 @@ export default function Campaigns() {
       searchParams.get("scroll") !== null &&
       searchParams.get("scroll") !== 0
     ) {
+      setScrollBlock(true);
       setTimeout(() => {
         window.scrollTo({
           left: 0,
