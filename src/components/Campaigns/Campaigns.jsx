@@ -44,7 +44,9 @@ export default function Campaigns() {
   const context = useContext(AuthorizationContext);
   const [data, setData] = useContext(CampaignsContext);
   const [currentSearch, setCurrentSearch] = useState(data);
+  const [scrollY, setScrollY] = useState(0);
   const location = useLocation();
+  const [scrollBlock, setScrollBlock] = useState(true);
 
   // console.log(context);
 
@@ -78,14 +80,6 @@ export default function Campaigns() {
     recentSearch.splice(recentSearch.indexOf(id), 1);
     setRecentSearch((recent) => [...recent]);
   };
-
-  useEffect(() => {
-    // console.log(
-    //   document
-    //     .querySelector(".activeCampaigns > a:nth-child(1)")
-    //     .scrollIntoView({ behavior: "instant" })
-    // );
-  }, []);
 
   useEffect(() => {
     let queryParams = {
@@ -174,6 +168,21 @@ export default function Campaigns() {
   };
 
   useEffect(() => {
+    const getScroll = () => {
+      if (!scrollBlock) {
+        console.log(window.scrollY);
+        setScrollY(window.scrollY);
+      }
+    };
+
+    window.addEventListener("scroll", getScroll);
+
+    return () => {
+      window.removeEventListener("scroll", getScroll);
+    };
+  }, [scrollBlock]);
+
+  useEffect(() => {
     if (searchParams.get("tab") !== null) {
       console.log(searchParams.get("tab"));
       setTab(searchParams.get("tab"));
@@ -196,6 +205,21 @@ export default function Campaigns() {
         searchParams.get("search"),
         searchParams.get("filter")
       );
+    }
+
+    if (
+      searchParams.get("scroll") !== null &&
+      searchParams.get("scroll") !== 0
+    ) {
+      setTimeout(() => {
+        window.scrollTo({
+          left: 0,
+          top: searchParams.get("scroll"),
+          behavior: "instant",
+        });
+        console.log("SCROLL P: " + searchParams.get("scroll"));
+        setScrollBlock(false);
+      }, 0);
     }
 
     console.log("GETTING PARAMS!");
@@ -268,9 +292,6 @@ export default function Campaigns() {
           {!searchActive && <img src={search_icon} className="searchIcon" />}
         </div>
 
-        {console.log(
-          "SBW: " + (searchBarValue !== "" && searchActive === true)
-        )}
         {searchBarValue !== "" && searchActive === true && (
           <div className="searchFilters">
             <button
@@ -339,7 +360,7 @@ export default function Campaigns() {
                     return (
                       <Link
                         to={item.id.toString()}
-                        state={`?tab=${tab}`}
+                        state={`?tab=${tab}&scroll=${scrollY}`}
                         key={"campaign_" + item.id}
                       >
                         <div
@@ -370,7 +391,7 @@ export default function Campaigns() {
                     return (
                       <Link
                         to={item.id.toString()}
-                        state={`?tab=${tab}`}
+                        state={`?tab=${tab}&scroll=${scrollY}`}
                         key={"campaign_" + item.id}
                       >
                         <div
@@ -407,7 +428,7 @@ export default function Campaigns() {
                     return (
                       <Link
                         to={item.id.toString()}
-                        state={`?tab=${tab}`}
+                        state={`?tab=${tab}&scroll=${scrollY}`}
                         key={"campaign_" + item.id}
                       >
                         <div className="campaign">
@@ -439,7 +460,7 @@ export default function Campaigns() {
               return (
                 <Link
                   to={item.id.toString()}
-                  state={`?${searchParams.toString()}`}
+                  state={`?${searchParams.toString()}&scroll=${scrollY}`}
                   key={"campaign_" + item.id}
                 >
                   <div
